@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kontaktformular</title>
+	
+	<link rel="stylesheet" href="CSS/style.css">
+
+</head>
+
+<body>
+	<main>
+		<header>
+			<a class="logo" href="index.html"><img src="Bilder\Logo.png" title="zur Startseite" height="71px" width="255px"></a>
+		</header>
+ 
+	<nav>
+		<li>
+			<div class="dropdown">
+				<button class="dropbtn"><a href="Überuns.html" title="Über uns">Über uns</a></button>
+			</div>
+		</li>
+		
+		<li>
+		<div class="dropdown">
+		<button class="dropbtn"> <a href="Produkte.html" title="Produkte">Produkte</a></button>
+			<div class="dropdown-content">
+				<a href="./produkte.html#damenbrillen">Damenbrillen</a>
+				<a href="./produkte.html#herrenbrillen">Herrenbrillen</a>
+				<a href="./produkte.html#sonnenbrillen">Sonnenbrillen</a>
+				<a href="./produkte.html#sportbrillen">Sportbrillen</a>
+				<a href="./produkte.html#kontaktlinsen">Kontaktlinsen</a>
+			</div>
+		</div>
+		</li>								
+		
+		<li>
+		<div class="dropdown">
+			<button class="dropbtn"> <a href="Dienstleistungen.html" title="Dienstleistungen">Dienstleistungen</a></button>
+				<div class="dropdown-content">
+				<a href="#">Augenmessung</a>
+				<a href="#">Beratung</a>
+				<a href="#">Kundenservice</a>
+			</div>
+		</div>
+		</li>
+		
+		<li>
+		<div class="dropdown">
+			<button class="dropbtn"> <a href="Standorte.html" title="Standorte">Standorte</a></button>
+				<div class="dropdown-content">
+				<a href="#">Tettnang</a>
+				<a href="#">Ravensburg</a>
+				<a href="#">Friedrichshafen</a>
+			</div>
+		</li>
+		<li>
+			<div class="dropdown">
+				<button class="dropbtn"> <a href="Kontaktformular.html" title="Kontaktformular">Kontaktformular</a></button>
+			</div>
+		</li>
+	</nav>
+ 
+	<section>
+		<h1>Kontaktformular</h1>
+			<header id="farbverlauf">Sie benötigen einen Termin oder eine Beratung?<br>
+				Rufen Sie uns gerne an, oder schreiben Sie uns Ihr Anliegen hier:
+			</header>
+		
+		<div class="formular">
+		<article>
+			<form action="mailto:info@SchoenesGlas.optik" method="post" enctype="text/plain">
+				<textarea name="nachricht" cols="67" rows="6" placeholder="Geben Sie Ihre Nachricht hier ein..."></textarea><br><br>			
+				<h1>Persönliche Angaben:</h1>	
+				<p>Vorname: <input class="angaben" type="text" name="vorname" placeholder="Vorname..."></p>
+				<p>Nachname: <input class="angaben" type="text" name="nachname" placeholder="Nachname..."></p>
+				<h1>Ihre Adresse:</h1>
+				<p>Straße: <input class="angaben" type="text" name="straße" placeholder="Straße..."></p>
+				<p>Hausnummer: <input class="angaben" type="number" name="hausnummer" placeholder="Hausnummer..."></p>
+				<p>Postleitzahl: <input class="angaben" type="number" name="postleitzahl" placeholder="Postleitzahl..."></p>
+				<p>Ort: <input class="angaben" type="text" name="ort" placeholder="Ort..."></p>
+				<p>Telefonnummer: <input class="angaben" type="number" name="telefonnummer" placeholder="Telefonnummer..."></p>
+				<p>E-Mail: <input class="angaben" type="text" name="email" placeholder="E-Mail..."></p>
+				<input type="checkbox" name="Anruf" value="True">Rufen Sie mich an<br><br>
+				<input type="checkbox" name="Mail" value="True">Schreiben Sie mir eine Mail<br><br>
+				<input type="submit" value="Absenden">
+			</form> 
+		</article>
+		</div>
+		 
+	</section>
+ 
+	<aside>	
+		Öffnungszeiten:<br><br>
+		<table>
+			<tr>
+				<td>Montag:</td>
+				<td>08:00 - 18:00</td>
+			</tr>
+			<tr>
+				<td>Dienstag:</td>
+				<td>08:00 - 18:00</td>			
+			</tr>
+			<tr>
+				<td>Mittwoch:</td>
+				<td>08:00 - 12:00</td>
+			</tr>
+			<tr>
+				<td>Donnerstag:</td>
+				<td>08:00 - 18:00</td>
+			</tr>
+			<tr>
+				<td>Freitag:</td>
+				<td>08:00 - 15:00</td>
+			</tr>
+			<tr>
+				<td>Samstag:</td>
+				<td>08:00 - 12:00</td>
+			</tr>
+			<tr>
+				<td>Sonntag:</td>
+				<td>Ruhetag</td>
+			</tr>
+			<tr>
+				<td><h2>Mittagspause:</h2></td>
+				<td><h2>tägl. 12:00-13:00</h2></td>
+			</tr>
+		</table><br>
+		
+		<img src="Bilder\Logo.png" title="Logo" height="40px" width="150px">
+		
+			SchönesGlas<br>
+			INH Tom Paulus<br>
+			Holzhaldenstraße 12<br>
+			88069 Tettnang<br>
+	</aside>
+ 
+	<footer>
+		<a href="Impressum.html">Impressum</a>
+	</footer>
+	
+	</main>   
+</body>
+</html>

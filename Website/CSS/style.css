@@ -1,0 +1,294 @@
+
+	   * {
+            color: #999999;
+            font-size: 20px;
+            font-weight: 400;
+            box-sizing: border-box;
+            font-family: 'Monteserat', Arial, sans-serif;
+        }
+
+ 
+		a {
+			display: inline-block;	
+			border-radius: 4px;
+			padding: auto;	
+			margin: auto;	
+			outline: none;
+			}
+	
+		nav{
+			background-color: #e6f9ff;
+            display:inline-block;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+			list-style-type: none;
+			width: calc(75% - 75px);
+			height: 75px;
+            margin: 25px 25px 25px 0px;
+            float: right;
+			text-align: center;
+        }
+		
+		li {display: inline-block;	
+			text-align: center;	
+	
+		}
+		
+        header{
+			background-color: #e6f9ff;
+			text-align: center;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+			width: 25%;
+            margin: 25px 25px 25px 25px;
+            display: inline-block;
+        }	
+		
+        section,
+        aside{
+            text-align: center;
+            border-radius: 4px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+        }
+ 
+		footer{
+			text-align: center;
+            border-radius: 4px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+ 			background-color: #f4fcff;
+		}
+		
+        aside {
+			text-align: left;
+			width: 25%;
+            float: left;
+            min-height: 500px;
+        }
+ 
+        section {
+            float: left;
+            width: calc(75% - 75px);
+            margin: 0 25px 25px 25px;
+        }
+ 
+        section header,	
+        section article,
+        section footer {
+			background-color: #ffffff;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #e5e5e5;
+            box-shadow: none;
+            margin: 25px 0px 0px 0px;
+            padding: 50px;
+        }
+		
+        footer {
+            width: 96.5%;
+            margin: 25px 25px 0px 25px;
+            clear: both;
+        }
+		
+		table {
+			text-align: left;
+		}
+		
+		h1{
+			color: #000000;
+		}
+		
+		h2{
+			font-size: 16px;
+			color: #999999;
+		}
+		
+		}
+		textarea {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+.dropbtn {
+	background-color: #e6f9ff;
+	color: white;
+	padding: 26px;
+	font-size: 4px;
+	border: none;
+	border-radius: 4px;
+	}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 170px;
+	z-index: 1;
+	}
+
+.dropdown-content a {
+	color: black;
+	font-size: 16px;
+	padding: 1px;
+	text-decoration: none;
+	display: block;
+	border: solid 1px;
+	}
+
+.dropdown-content a:hover {background-color: #ffffff;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #ccf3ff;}
+
+
+.formular {text-align:left;}
+
+.angaben {float:right;}
+
+.logo {
+	display: block;
+	border-radius: none;
+	padding: none;	
+	margin: none;	
+	outline: none;
+	} 
+		
+.fotoschrift 	{
+	background-color:#ffffff;
+	font-size:40px; 
+	font-weight: bold;
+	}
+
+.produkte 	{
+	background-color:#ffffff; 
+	font-weight: bold;
+	}
+
+.produktbild {
+	background-image:url(produkt.jpg);
+	background-size: 300px 200px;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+.sehtest {
+	background-image:url(sehtest.jpg);
+	background-size: 530px 450px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	background-position: center center;
+}
+
+.internanlegen {text-align: auto;
+}
+
+::placeholder	{font-size:16px;
+				 color: #d9d9d9;}
+
+#willkommen {font-size: 70px;
+			font-family: "brush script mt"}
+
+
+#produktslogan {
+	font-size:30px; 
+	font-weight: bold;
+}
+						
+#startseitearticle {background-image:url(titelbild.jpg);
+					background-size: 800px 200px;	
+}	
+
+#startseitefooter  {background-image:url(produktfoto.png);
+					background-size: 750px 150px;	
+					background-repeat: no-repeat;
+					background-position: center center;
+}					
+			
+#footer    {margin: none; 
+			padding-left: 30px;	
+			outline: none;
+}
+
+#überunsaside 	{background-image:url(personen.jpg); 
+				 background-size: 380px 500px;
+				 background-repeat: no-repeat;
+}
+
+#mitarbeiterlogin  {float: center;
+					width: 96%;	
+}
+
+#nutzermargin {margin-left: 19px;
+}
+
+#passwortmargin{margin-left: 47px;
+}
+
+#sectionstandorte  {float: center;
+					width: 96%;	
+}
+#sectionimpressum  {float: center;
+					width: 96%;	
+}
+
+#farbverlauf {background-image:linear-gradient(90deg, #e6f9ff 7%, #ffffff 75%)
+}
+
+#herrenbrillen {text-align: left; 
+				background-image: url(herrenbrille.jpg);
+				background-repeat: no-repeat;
+				background-size: 220px 120px;
+				background-position: center right;
+}
+#damenbrillen  {text-align: left; 
+				background-image: url(damenbrille.jpg);
+				background-repeat: no-repeat;
+				background-size: 240px 160px;
+				background-position: center right;
+}
+#kinderbrillen {text-align: left; 
+				background-image: url(kinderbrille.jpg);
+				background-repeat: no-repeat;
+				background-size: 200px 140px;
+				background-position: center right;
+}
+#sonnenbrillen {text-align: left; 
+				background-image: url(sonnenbrille.jpg);
+				background-repeat: no-repeat;
+				background-size: 230px 190px;
+				background-position: center right;
+}
+#sportbrillen { text-align: left; 
+				background-image: url(sportbrille.png);
+				background-repeat: no-repeat;
+				background-size: 200px 80px;
+				background-position: center right;
+}
+#kontaktlinsen {text-align: left; 
+				background-image: url(kontaktlinse.jpg);
+				background-repeat: no-repeat;
+				background-size: 180px 80px;
+				background-position: center right;
+}
+				
+#termine	{background-image:url(termine.jpg);
+			background-size: cover;	
+			background-color:#ffffff;
+			background-repeat: no-repeat;
+			font-size:45px; 
+			font-weight: bold;
+}
+
+#sommerfest	{background-image:url(sommerfest.jpg);
+			background-size: cover;
+			height:200px;
+			background-repeat: no-repeat;
+}
