@@ -67,7 +67,7 @@
 	<section id="mitarbeiterlogin">
 		<h1>Mitarbeiter Login</h1>
 			<article>
-			<form method="post" action="intern.php">
+			<form method="post" action="loginValidation.php">
 				Nutzername: <input type="text" class="nutzername" name="nutzername" id="nutzermargin"><br><br>
 				Passwort: <input type="password" class="passwort" name="passwort" id="passwortmargin"><br><br>
 				<input type="submit" value="Bestätigen">
@@ -76,8 +76,12 @@
 			<?php
 				
 				session_start();
-				if (!empty($_SESSION["error"])) {		//prüfen ob man eine error ausgabe braucht!										
-					echo $_SESSION['error']; 		//Error Nachricht ausgeben!	
+				
+	
+				
+				if (!empty($_SESSION['error'])) {		//prüfen ob man eine error ausgabe braucht!										
+					echo $_SESSION['error']; 
+					session_unset();	//Error Nachricht ausgeben!	
 				}	
 			
 			?>

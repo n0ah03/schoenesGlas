@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Userspace</title>
+		<title>Login Validation</title>
 	</head>
 	
 	<body style="text-align: center;">
@@ -16,6 +16,9 @@
 			//SESSION -> VARIABLEN KÖNNEN IN MEHREREN SEITEN BENUTZT WERDEN!
 			//ES WIRD GEPRÜFT OB PASSWORD UND USERNAME ÜBERGEBEN WURDEN -> WENN NICHT ZURÜCK ZUM LOGIN! MIT FEHLERMELDUNG
 			session_start();
+			
+			$_SESSION['login'] = false;	
+			
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		  		if (empty($_POST["passwort"]) || empty($_POST["nutzername"])) {
 					$_SESSION['error']= "Passwort und Nutername angeben!";	
@@ -26,7 +29,8 @@
 			$username = $_POST["nutzername"];
 			$password = $_POST["passwort"];
 			
-			$db_link = new mysqli('localhost', 'sqlAdmin', 'ubuntuSQL0330', 'schoenesGlas'); //LOGIN IN SQL UND AUFRUF DER DATENBANK  
+			
+			$db_link = new mysqli('localhost', 'sgSQLadmin', 'sgvmSQL!', 'schoenesGlas'); //LOGIN IN SQL UND AUFRUF DER DATENBANK  
 			
 			
 			
@@ -41,25 +45,26 @@
 			$row = mysqli_fetch_array($erg,MYSQLI_ASSOC); // DIE ARRAY ERGEBNISSE UMWANDELN!
 			
 			$count = mysqli_num_rows($erg); //COUNT GIBT DIE ANZAHL DER ERGEBNISSE DER ABFRAGE AN!
-			
-		?>
-			
-		<?php
+
+
 			//CHECKEN OB ES NUR EIN ERGEBNISS IN DER DATENBANK GIBT
 			if ($count == 1) {
 				echo "<h2>Wilkommen im Intranet!<h2>";
+				$_SESSION['login'] = true;
 				header("Location: Intern.php");
-		
+
 			}
 			
 			
 			
 			else if ($count > 1) {
 				$_SESSION['error'] = "Ungültige Eingabe! <br> Wenden Sie sich an den Administrator!";
+				$_SESSION['login'] = false;
 				header("Location: Mitarbeiterlogin.php");
 			}
 			else {
 				$_SESSION['error'] = "Nutername oder Passwort falsch!";
+				$_SESSION['login'] = false;	
 				header("Location: Mitarbeiterlogin.php");
 			}
 			
