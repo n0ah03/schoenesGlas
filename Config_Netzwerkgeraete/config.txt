@@ -1,0 +1,165 @@
+Current configuration : 4061 bytes
+!
+! Last configuration change at 05:15:12 UTC Fri Apr 29 2022
+!
+version 16.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+!
+hostname SG_R3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+enable secret 5 $1$AnDx$s.DTelCWjXNMBEVo/D2A./
+!
+no aaa new-model
+!
+ip name-server 8.8.8.8
+no ip domain lookup
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+multilink bundle-name authenticated
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2096368468
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2096368468
+ revocation-check none
+ rsakeypair TP-self-signed-2096368468
+!
+!
+crypto pki certificate chain TP-self-signed-2096368468
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 32303936 33363834 3638301E 170D3232 30343238 30373436
+  31325A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 30393633
+  36383436 38308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201
+  0A028201 01009D4F DFF5F591 FBF41FBB F37EBD2C 3DFA0925 E261EA84 3954ECB9
+  14AE96A3 3AF5AAA4 7D690798 E7B8A81C 432D6998 2B120036 F534AAAA 0DD178CD
+  CB9BC9CB 2880C091 D4EFFC88 2B05B5DE 7936A82B 6A80655D 855E78B0 5D30A488
+  88EF55A4 3910E0E2 A9ADF9CB 2DD0E1D1 3180055A 4879BC9C AEEC9C8C BE30AC19
+  CABA2E5E 7AF41BF2 FF09051A 08BD0D93 2B474ACE 88B6EF47 137FD1B7 9989D8AF
+  79A4F5C6 EB26A96D 01938CAF 210445BC 6C5CB72B 6024697F 4C863761 2746FAD3
+  7F715E26 E6441A3C 367F3665 0988A958 D474FCC9 96BF3EE9 31A0AB90 D460A139
+  14594918 1E87F73B 01C832E5 B84FEC9D 23ECDC49 C726D31E 20D4CC17 A578D34F
+  6D22DA0A 7BC50203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF
+  301F0603 551D2304 18301680 141F97B1 B5971F21 39B71B50 875E5BE3 044B1C69
+  50301D06 03551D0E 04160414 1F97B1B5 971F2139 B71B5087 5E5BE304 4B1C6950
+  300D0609 2A864886 F70D0101 05050003 82010100 16739C98 02810E39 A9CC7746
+  58FE1D43 C6BA2548 98834B0D 79214EF0 BC69648E C00530E5 14442543 CF68B541
+  1CDCE233 999ED64C 960FDA8B 6FE544CB 5561F91D D029B2F5 32098434 DE06D7DE
+  8C5EA2D8 C8D9B520 9C412649 F8320C8D FD27B596 8847DE5C DCEF8A1C 715FE01E
+  13DF4BED CD54A5E2 2E195091 C09ACE76 FE89B661 C01D3BE4 57A95AE3 EE243A51
+  18920CE7 7C949CC8 E3F77846 077A4FF7 BF562F8F 0AF52734 50406CB0 0959168E
+  E44D50BF 41D7606E 81F015A8 96B5F80B CC11D976 78EF2DC6 9A0D2CA0 202AB7D4
+  7FA306A3 A8DD92FB 27B451D3 6C6FB435 C8AF2DC5 BB0E81BC 3C38A115 A7FCD553
+  0535BE7C 979743CC 42BC81E2 8AF8FD87 B7D7ADD5
+        quit
+!
+license udi pid ISR4331/K9 sn FDO24171CN2
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ description 172.20.3.1 - Netz - Anbindung schoenesGlass
+ ip address 172.20.3.1 255.255.255.192
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ description EST-Netz - Anbindung Internet
+ ip address dhcp
+ negotiation auto
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ no ip address
+ shutdown
+ negotiation auto
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+ip tftp source-interface GigabitEthernet0
+ip route 0.0.0.0 0.0.0.0 192.168.0.1
+!
+!
+!
+!
+!
+!
+control-plane
+!
+banner motd ^C
+*************************************
++ Unerlaubter Zugriff verboten!     +
++ Router schonerGlass Filiale 3     +
+*************************************
+^C
+!
+line con 0
+ password 7 0017141407540547
+ login
+ transport input none
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ password 7 105D0E0B13030B4A
+ login
+line vty 5 15
+ password 7 105D0E0B13030B4A
+ login
+!
+!
+!
+!
+!
+!
+end
