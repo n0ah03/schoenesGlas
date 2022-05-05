@@ -30,6 +30,7 @@
 			$password = $_POST["passwort"];
 			
 			
+			
 			$db_link = new mysqli('localhost', 'sgSQLadmin', 'sgvmSQL!', 'schoenesGlas'); //LOGIN IN SQL UND AUFRUF DER DATENBANK  
 			
 			
@@ -38,35 +39,38 @@
  				 die("Connection failed: " . $conn->connect_error);	//FUNKTIONIERT DIE VERBINDUNG NICHT HIER ABBRECHEN UND FEHLERMELDUNG AUSGEBEN!
 			}
 			
-			$sql = "SELECT * FROM Mitarbeiter WHERE passwort='$password' AND nutzername='$username'"; //SQL STATMENT MIT DEN EINGABEN
+			$sql = "SELECT * FROM Mitarbeiter WHERE nutzername='$username'"; //SQL STATMENT MIT DEN EINGABEN
 			
 			$erg = mysqli_query($db_link, $sql); //DAS SQL STATMENT AUSFÜHREN WIRD ALS ARRAY GESPEICHERT
 			
-			$row = mysqli_fetch_array($erg,MYSQLI_ASSOC); // DIE ARRAY ERGEBNISSE UMWANDELN!
+			$row = mysqli_fetch_array($erg,MYSQLI_ASSOC); // ERGEBNISSE UMWANDELN IN ARRAY !
 			
 			$count = mysqli_num_rows($erg); //COUNT GIBT DIE ANZAHL DER ERGEBNISSE DER ABFRAGE AN!
 
 
-			//CHECKEN OB ES NUR EIN ERGEBNISS IN DER DATENBANK GIBT
-			if ($count == 1) {
-				echo "<h2>Wilkommen im Intranet!<h2>";
-				$_SESSION['login'] = true;
-				header("Location: Intern.php");
+			if(password_verify($password, $row['passwort']) || $password == $row['passwort']) {
+			
+			
+			
+				//CHECKEN OB ES NUR EIN ERGEBNISS IN DER DATENBANK GIBT
+				if ($count == 1) {
+					echo "<h2>Wilkommen im Intranet!<h2>";
+					$_SESSION['login'] = true;
+					header("Location: Intern.php");
 
+				}
 			}
-			
-			
 			
 			else if ($count > 1) {
-				$_SESSION['error'] = "Ungültige Eingabe! <br> Wenden Sie sich an den Administrator!";
-				$_SESSION['login'] = false;
-				header("Location: Mitarbeiterlogin.php");
-			}
+					$_SESSION['error'] = "Ungültige Eingabe! <br> Wenden Sie sich an den Administrator!";
+					$_SESSION['login'] = false;
+					header("Location: Mitarbeiterlogin.php");
+				}
 			else {
-				$_SESSION['error'] = "Nutername oder Passwort falsch!";
-				$_SESSION['login'] = false;	
-				header("Location: Mitarbeiterlogin.php");
-			}
+					$_SESSION['error'] = "Nutername oder Passwort falsch!";
+					$_SESSION['login'] = false;	
+					header("Location: Mitarbeiterlogin.php");
+				}
 			
 			mysqli_free_result($erg);
 			

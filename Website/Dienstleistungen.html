@@ -28,11 +28,11 @@
 		<div class="dropdown">
 		<button class="dropbtn"> <a href="Produkte.html" title="Produkte">Produkte</a></button>
 			<div class="dropdown-content">
-				<a href="./produkte.html#damenbrillen">Damenbrillen</a>
-				<a href="./produkte.html#herrenbrillen">Herrenbrillen</a>
-				<a href="./produkte.html#sonnenbrillen">Sonnenbrillen</a>
-				<a href="./produkte.html#sportbrillen">Sportbrillen</a>
-				<a href="./produkte.html#kontaktlinsen">Kontaktlinsen</a>
+				<a href="./Produkte.html#damenbrillen">Damenbrillen</a>
+				<a href="./Produkte.html#herrenbrillen">Herrenbrillen</a>
+				<a href="./Produkte.html#sonnenbrillen">Sonnenbrillen</a>
+				<a href="./Produkte.html#sportbrillen">Sportbrillen</a>
+				<a href="./Produkte.html#kontaktlinsen">Kontaktlinsen</a>
 			</div>
 		</div>
 		</li>								

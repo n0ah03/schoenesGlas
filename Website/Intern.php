@@ -28,11 +28,11 @@
 		<div class="dropdown">
 		<button class="dropbtn"> <a href="Produkte.html" title="Produkte">Produkte</a></button>
 			<div class="dropdown-content">
-				<a href="#">Frauenbrillen</a>
-				<a href="#">Herrenbrillen</a>
-				<a href="#">Sonnenbrillen</a>
-				<a href="#">Sportbrillen</a>
-				<a href="#">Kontaktlinsen</a>
+				<a href="./Produkte.html#damenbrillen">Damenbrillen</a>
+				<a href="./Produkte.html#herrenbrillen">Herrenbrillen</a>
+				<a href="./Produkte.html#sonnenbrillen">Sonnenbrillen</a>
+				<a href="./Produkte.html#sportbrillen">Sportbrillen</a>
+				<a href="./Produkte.html#kontaktlinsen">Kontaktlinsen</a>
 			</div>
 		</div>
 		</li>								
@@ -111,10 +111,10 @@
 				$vorname = $_POST["vorname"];
 				$nachname = $_POST["nachname"];
 				$nutzername = $_POST["nutzername"];
-				$passwort = $_POST["passwort"];
+				$passwort = password_hash($_POST["passwort"],PASSWORD_DEFAULT);
 				$email = $_POST["email"];
 					
-				$db_link = new mysqli('localhost', 'sqlAdmin', 'ubuntuSQL0330', 'schoenesGlas'); //LOGIN IN SQL UND AUFRUF DER DATENBANK  
+				$db_link = new mysqli('localhost', 'sgSQLadmin', 'sgvmSQL!', 'schoenesGlas'); //LOGIN IN SQL UND AUFRUF DER DATENBANK  
 			
 				if ($db_link->connect_error) { 
 					die("Connection failed: " . $db_link->connect_error);	//FUNKTIONIERT DIE VERBINDUNG NICHT HIER ABBRECHEN UND FEHLERMELDUNG AUSGEBEN!
